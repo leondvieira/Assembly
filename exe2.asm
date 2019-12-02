@@ -1,0 +1,78 @@
+ORG 0
+
+IF100:
+   LDA 100
+   SUB 101
+   JN IF101
+
+   LDA 100
+   SUB 102
+   JN IF102
+
+   LDA 100
+   SUB 103
+   JN IF103
+
+   LDA 100
+   SUB 104
+   JN IF104
+
+   LDA 100
+   JMP MOSTRAR
+   
+
+IF101:
+   LDA 101
+   SUB 102
+   JN IF102
+
+   LDA 101
+   SUB 103
+   JN IF103
+
+   LDA 101
+   SUB 104
+   JN IF104
+
+   LDA 101
+   JMP MOSTRAR
+
+
+IF102:
+   LDA 102
+   SUB 103
+   JN IF103
+
+   LDA 102
+   SUB 104
+   JN IF104
+
+   LDA 102
+   JMP MOSTRAR
+
+
+IF103:
+   LDA 103
+   SUB 104
+   JN IF104
+
+   LDA 103
+   JMP MOSTRAR
+
+
+IF104:
+   LDA 104
+   MOSTRAR
+
+
+MOSTRAR:
+   OUT 0
+   HLT
+
+
+ORG 100
+   DB 6
+   DB 7
+   DB 8
+   DB 9
+   DB 10

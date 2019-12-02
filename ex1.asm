@@ -1,0 +1,41 @@
+ORG 0
+  LDA A
+  SUB DEZ
+  JZ ERRO
+  JN ERRO
+
+  LDA A  
+  SUB QUINZE
+  JZ ERRO
+  JN IFUM
+
+  LDA A
+  SUB VINTE
+  JZ ERRO
+  JN ELSEIF
+
+ERRO:
+  LDI 69
+  OUT 2
+  LDI 82
+  OUT 2
+  OUT 2
+  JMP FIM
+
+IFUM:
+  LDI 1
+  OUT 0
+  JMP FIM
+
+ELSEIF:
+  LDI 2
+  OUT 0
+ 
+FIM: 
+  HLT
+
+ORG 100
+  A: DB 13
+  DEZ: DB 10
+  QUINZE: DB 15
+  VINTE: DB 20
